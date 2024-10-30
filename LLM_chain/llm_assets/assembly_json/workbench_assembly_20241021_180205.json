@@ -1,0 +1,29 @@
+{
+  "cabinets": [
+    {
+      "type": "drawer_cabinet",
+      "requirements": []
+    },
+    {
+      "type": "drawer_cabinet",
+      "requirements": []
+    },
+    {
+      "type": "rolling_cabinet",
+      "requirements": []
+    }
+  ],
+  "workbench_top": {
+    "type": "universal",
+    "requirements": [
+      "impact resistant"
+    ]
+  },
+  "rear_panels": {
+    "needed": false,
+    "type": null,
+    "color": null,
+    "requirements": []
+  },
+  "general_requirements": []
+}

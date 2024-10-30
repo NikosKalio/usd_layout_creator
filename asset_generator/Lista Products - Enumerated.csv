@@ -1,0 +1,141 @@
+Name,Type,Function,Width,Depth,Height,Color (Object),Color (Attribute),Material
+drawer_cabinet_1,Drawer Cabinet,Stationary cabinet used for basic storage needs,411,572,800,grey,Null,Metal
+drawer_cabinet_2,Drawer Cabinet,Stationary cabinet used for basic storage needs,564,572,800,grey,Null,Metal
+drawer_cabinet_3,Drawer Cabinet,Stationary cabinet used for basic storage needs,717,572,800,grey,Null,Metal
+drawer_cabinet_4,Drawer Cabinet,Stationary cabinet used for basic storage needs,1023,572,800,grey,Null,Metal
+drawer_cabinet_5,Drawer Cabinet,Stationary cabinet used for basic storage needs,411,725,800,grey,Null,Metal
+drawer_cabinet_6,Drawer Cabinet,Stationary cabinet used for basic storage needs,564,725,800,grey,Null,Metal
+drawer_cabinet_7,Drawer Cabinet,Stationary cabinet used for basic storage needs,717,725,800,grey,Null,Metal
+drawer_cabinet_8,Drawer Cabinet,Stationary cabinet used for basic storage needs,870,725,800,grey,Null,Metal
+drawer_cabinet_9,Drawer Cabinet,Stationary cabinet used for basic storage needs,1023,725,800,grey,Null,Metal
+drawer_cabinet_10,Drawer Cabinet,Stationary cabinet used for basic storage needs,1193,725,800,grey,Null,Metal
+drawer_cabinet_11,Drawer Cabinet,Stationary cabinet used for basic storage needs,1431,725,800,grey,Null,Metal
+rolling_cabinet_1,Rolling Cabinet,Mobile cabinet used for basic storage needs,411,572,800,black,Null,Metal
+rolling_cabinet_2,Rolling Cabinet,Mobile cabinet used for basic storage needs,564,572,800,black,Null,Metal
+rolling_cabinet_3,Rolling Cabinet,Mobile cabinet used for basic storage needs,717,572,800,black,Null,Metal
+rolling_cabinet_4,Rolling Cabinet,Mobile cabinet used for basic storage needs,1023,572,800,black,Null,Metal
+rolling_cabinet_5,Rolling Cabinet,Mobile cabinet used for basic storage needs,411,725,800,black,Null,Metal
+rolling_cabinet_6,Rolling Cabinet,Mobile cabinet used for basic storage needs,564,725,800,black,Null,Metal
+rolling_cabinet_7,Rolling Cabinet,Mobile cabinet used for basic storage needs,717,725,800,black,Null,Metal
+rolling_cabinet_8,Rolling Cabinet,Mobile cabinet used for basic storage needs,870,725,800,black,Null,Metal
+rolling_cabinet_9,Rolling Cabinet,Mobile cabinet used for basic storage needs,1023,725,800,black,Null,Metal
+rolling_cabinet_10,Rolling Cabinet,Mobile cabinet used for basic storage needs,1193,725,800,black,Null,Metal
+rolling_cabinet_11,Rolling Cabinet,Mobile cabinet used for basic storage needs,1431,725,800,black,Null,Metal
+hinged_door_cabinet_with_bin_1,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,411,572,800,blue,Null,Metal
+hinged_door_cabinet_with_bin_2,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,564,572,800,blue,Null,Metal
+hinged_door_cabinet_with_bin_3,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,717,572,800,blue,Null,Metal
+hinged_door_cabinet_with_bin_4,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,1023,572,800,blue,Null,Metal
+hinged_door_cabinet_with_bin_5,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,411,725,800,blue,Null,Metal
+hinged_door_cabinet_with_bin_6,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,564,725,800,blue,Null,Metal
+hinged_door_cabinet_with_bin_7,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,717,725,800,blue,Null,Metal
+hinged_door_cabinet_with_bin_8,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,870,725,800,blue,Null,Metal
+hinged_door_cabinet_with_bin_9,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,1023,725,800,blue,Null,Metal
+hinged_door_cabinet_with_bin_10,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,1193,725,800,blue,Null,Metal
+hinged_door_cabinet_with_bin_11,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,1431,725,800,blue,Null,Metal
+power_cabinet_1,Power Cabinet,Cabinet with power outlets,411,572,800,yellow,Null,Metal
+power_cabinet_2,Power Cabinet,Cabinet with power outlets,564,572,800,yellow,Null,Metal
+power_cabinet_3,Power Cabinet,Cabinet with power outlets,717,572,800,yellow,Null,Metal
+power_cabinet_4,Power Cabinet,Cabinet with power outlets,1023,572,800,yellow,Null,Metal
+power_cabinet_5,Power Cabinet,Cabinet with power outlets,411,725,800,yellow,Null,Metal
+power_cabinet_6,Power Cabinet,Cabinet with power outlets,564,725,800,yellow,Null,Metal
+power_cabinet_7,Power Cabinet,Cabinet with power outlets,717,725,800,yellow,Null,Metal
+power_cabinet_8,Power Cabinet,Cabinet with power outlets,870,725,800,yellow,Null,Metal
+power_cabinet_9,Power Cabinet,Cabinet with power outlets,1023,725,800,yellow,Null,Metal
+power_cabinet_10,Power Cabinet,Cabinet with power outlets,1193,725,800,yellow,Null,Metal
+power_cabinet_11,Power Cabinet,Cabinet with power outlets,1431,725,800,yellow,Null,Metal
+cabinet_with_hinged_doors_1,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,411,572,800,white,Null,Metal
+cabinet_with_hinged_doors_2,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,564,572,800,white,Null,Metal
+cabinet_with_hinged_doors_3,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,717,572,800,white,Null,Metal
+cabinet_with_hinged_doors_4,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,1023,572,800,white,Null,Metal
+cabinet_with_hinged_doors_5,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,411,725,800,white,Null,Metal
+cabinet_with_hinged_doors_6,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,564,725,800,white,Null,Metal
+cabinet_with_hinged_doors_7,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,717,725,800,white,Null,Metal
+cabinet_with_hinged_doors_8,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,870,725,800,white,Null,Metal
+cabinet_with_hinged_doors_9,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,1023,725,800,white,Null,Metal
+cabinet_with_hinged_doors_10,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,1193,725,800,white,Null,Metal
+cabinet_with_hinged_doors_11,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,1431,725,800,white,Null,Metal
+heavy_duty_cabinets_1,Heavy-duty cabinets,Heavy duty large storage,1100,651,1950,grey,Null,Metal
+heavy_duty_cabinets_2,Heavy-duty cabinets,Heavy duty large storage,1146,690,1950,grey,Null,Metal
+hinged_door_cabinets_1,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,400,1000,grey,Null,Metal
+hinged_door_cabinets_2,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,500,1000,grey,Null,Metal
+hinged_door_cabinets_3,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,580,1000,grey,Null,Metal
+hinged_door_cabinets_4,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,400,1000,grey,Null,Metal
+hinged_door_cabinets_5,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,500,1000,grey,Null,Metal
+hinged_door_cabinets_6,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,580,1000,grey,Null,Metal
+hinged_door_cabinets_7,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,400,1000,grey,Null,Metal
+hinged_door_cabinets_8,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,500,1000,grey,Null,Metal
+hinged_door_cabinets_9,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,580,1000,grey,Null,Metal
+hinged_door_cabinets_10,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,400,1000,grey,Null,Metal
+hinged_door_cabinets_11,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,500,1000,grey,Null,Metal
+hinged_door_cabinets_12,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,580,1000,grey,Null,Metal
+hinged_door_cabinets_13,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,400,1200,grey,Null,Metal
+hinged_door_cabinets_14,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,500,1200,grey,Null,Metal
+hinged_door_cabinets_15,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,580,1200,grey,Null,Metal
+hinged_door_cabinets_16,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,400,1200,grey,Null,Metal
+hinged_door_cabinets_17,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,500,1200,grey,Null,Metal
+hinged_door_cabinets_18,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,580,1200,grey,Null,Metal
+hinged_door_cabinets_19,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,400,1200,grey,Null,Metal
+hinged_door_cabinets_20,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,500,1200,grey,Null,Metal
+hinged_door_cabinets_21,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,580,1200,grey,Null,Metal
+hinged_door_cabinets_22,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,400,1200,grey,Null,Metal
+hinged_door_cabinets_23,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,500,1200,grey,Null,Metal
+hinged_door_cabinets_24,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,580,1200,grey,Null,Metal
+hinged_door_cabinets_25,Hinged Door Cabinets,Taller cabinets for even more storage volume,1100,651,1320,grey,Null,Metal
+hinged_door_cabinets_26,Hinged Door Cabinets,Taller cabinets for even more storage volume,1146,690,1320,grey,Null,Metal
+hinged_door_cabinets_27,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,400,1320,grey,Null,Metal
+hinged_door_cabinets_28,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,500,1320,grey,Null,Metal
+hinged_door_cabinets_29,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,580,1320,grey,Null,Metal
+hinged_door_cabinets_30,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,400,1320,grey,Null,Metal
+hinged_door_cabinets_31,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,500,1320,grey,Null,Metal
+hinged_door_cabinets_32,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,580,1320,grey,Null,Metal
+hinged_door_cabinets_33,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,400,1320,grey,Null,Metal
+hinged_door_cabinets_34,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,500,1320,grey,Null,Metal
+hinged_door_cabinets_35,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,580,1320,grey,Null,Metal
+hinged_door_cabinets_36,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,400,1320,grey,Null,Metal
+hinged_door_cabinets_37,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,500,1320,grey,Null,Metal
+hinged_door_cabinets_38,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,580,1320,grey,Null,Metal
+hinged_door_cabinets_39,Hinged Door Cabinets,Taller cabinets for even more storage volume,1100,651,1320,grey,Null,Metal
+hinged_door_cabinets_40,Hinged Door Cabinets,Taller cabinets for even more storage volume,1146,690,1320,grey,Null,Metal
+hinged_door_cabinets_41,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,400,1950,grey,Null,Metal
+hinged_door_cabinets_42,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,500,1950,grey,Null,Metal
+hinged_door_cabinets_43,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,580,1950,grey,Null,Metal
+hinged_door_cabinets_44,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,400,1950,grey,Null,Metal
+hinged_door_cabinets_45,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,500,1950,grey,Null,Metal
+hinged_door_cabinets_46,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,580,1950,grey,Null,Metal
+hinged_door_cabinets_47,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,400,1950,grey,Null,Metal
+hinged_door_cabinets_48,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,500,1950,grey,Null,Metal
+hinged_door_cabinets_49,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,580,1950,grey,Null,Metal
+hinged_door_cabinets_50,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,400,1950,grey,Null,Metal
+hinged_door_cabinets_51,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,500,1950,grey,Null,Metal
+hinged_door_cabinets_52,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,580,1950,grey,Null,Metal
+rear_panel_with_keyholes_1,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,750,350,20,blue,blue,Metal
+rear_panel_with_keyholes_2,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1000,350,20,blue,blue,Metal
+rear_panel_with_keyholes_3,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1500,350,20,blue,blue,Metal
+rear_panel_with_keyholes_4,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,750,350,20,black,black,Metal
+rear_panel_with_keyholes_5,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1000,350,20,black,black,Metal
+rear_panel_with_keyholes_6,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1500,350,20,black,black,Metal
+rear_panel_with_keyholes_7,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,750,350,20,white,white,Metal
+rear_panel_with_keyholes_8,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1000,350,20,white,white,Metal
+rear_panel_with_keyholes_9,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1500,350,20,white,white,Metal
+workbench_top_1,Workbench Top,"Universal countertop for the workshop, Linoleum covering, grey marbled, 2 mm, 
+with ABS edges, light grey, 
+Impact-resistant and slightly dampening, 
+Limited scratch resistance, 
+Colour change due to darkness is a natural reaction (disappears in normal light conditions), 
+Linoleum is made from natural raw materials",1000,1000,50,grey,Null,Universal
+workbench_top_2,Workbench Top,"Beechwood top, Made of steamed beech beams, 
+glued waterproof and with bevelled edges, 
+Sanded, oiled and waxed surface, 
+Extremely resilient, splash-proof, dirt-repellent
+ and largely impervious to oil and grease",1000,1000,50,grey,Null,Beechwood top
+workbench_top_3,Workbench Top,"With hard, slightly grained surface texture, 2 mm, 
+With ABS edges, 2 mm, black, 
+High scratch resistance and impact resistance, 
+Resistant to chemicals, oils and greases",1000,1000,50,grey,Null,ABS
+workbench_top_4,Workbench Top,"Colour light grey, 
+Easy-to-clean textured surface with HPL coating, 0.8 mm, 
+Resistant to common household chemicals, 
+solvents, weak acids and alkalis, 
+High impact and scratch resistance,
+
+",1000,1000,50,grey,Null,Resign Top

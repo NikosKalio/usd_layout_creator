@@ -1,0 +1,13 @@
+{
+  "cabinets": [
+    "drawer_cabinet",
+    "drawer_cabinet",
+    "rolling_cabinet"
+  ],
+  "workbench_top": "universal",
+  "rear_panels": {
+    "needed": false,
+    "type": null,
+    "color": null
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "cabinets": [
+    {
+      "type": "drawer_cabinet",
+      "requirements": [
+        "wide",
+        "more than 700mm"
+      ]
+    },
+    {
+      "type": "cabinet_with_hinged_doors",
+      "requirements": []
+    },
+    {
+      "type": "rolling_cabinet",
+      "requirements": [
+        "around 500mm"
+      ]
+    }
+  ],
+  "workbench_top": {
+    "type": "universal",
+    "requirements": [
+      "impact resistant"
+    ]
+  },
+  "rear_panels": {
+    "needed": false,
+    "type": null,
+    "color": null,
+    "requirements": []
+  },
+  "general_requirements": []
+}

@@ -1,0 +1,141 @@
+,Type,Function,Width,Depth,Height,Color (Object),Color (Attribute),Material
+,Drawer Cabinet,Stationary cabinet used for storage,411,572,800,grey,Null,Metal
+,Drawer Cabinet,Stationary cabinet used for storage,564,572,800,grey,Null,Metal
+,Drawer Cabinet,Stationary cabinet used for storage,717,572,800,grey,Null,Metal
+,Drawer Cabinet,Stationary cabinet used for storage,1023,572,800,grey,Null,Metal
+,Drawer Cabinet,Stationary cabinet used for storage,411,725,800,grey,Null,Metal
+,Drawer Cabinet,Stationary cabinet used for storage,564,725,800,grey,Null,Metal
+,Drawer Cabinet,Stationary cabinet used for storage,717,725,800,grey,Null,Metal
+,Drawer Cabinet,Stationary cabinet used for storage,870,725,800,grey,Null,Metal
+,Drawer Cabinet,Stationary cabinet used for storage,1023,725,800,grey,Null,Metal
+,Drawer Cabinet,Stationary cabinet used for storage,1193,725,800,grey,Null,Metal
+,Drawer Cabinet,Stationary cabinet used for storage,1431,725,800,grey,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,411,572,800,black,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,564,572,800,black,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,717,572,800,black,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,1023,572,800,black,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,411,725,800,black,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,564,725,800,black,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,717,725,800,black,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,870,725,800,black,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,1023,725,800,black,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,1193,725,800,black,Null,Metal
+,Rolling Cabinet,Mobile cabinet used for storage,1431,725,800,black,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,411,572,800,blue,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,564,572,800,blue,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,717,572,800,blue,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,1023,572,800,blue,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,411,725,800,blue,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,564,725,800,blue,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,717,725,800,blue,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,870,725,800,blue,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,1023,725,800,blue,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,1193,725,800,blue,Null,Metal
+,Hinged Door Cabinet with Bin,Cabinet with Bin for waste disposal,1431,725,800,blue,Null,Metal
+,Power Cabinet,Cabinet with power outlets,411,572,800,yellow,Null,Metal
+,Power Cabinet,Cabinet with power outlets,564,572,800,yellow,Null,Metal
+,Power Cabinet,Cabinet with power outlets,717,572,800,yellow,Null,Metal
+,Power Cabinet,Cabinet with power outlets,1023,572,800,yellow,Null,Metal
+,Power Cabinet,Cabinet with power outlets,411,725,800,yellow,Null,Metal
+,Power Cabinet,Cabinet with power outlets,564,725,800,yellow,Null,Metal
+,Power Cabinet,Cabinet with power outlets,717,725,800,yellow,Null,Metal
+,Power Cabinet,Cabinet with power outlets,870,725,800,yellow,Null,Metal
+,Power Cabinet,Cabinet with power outlets,1023,725,800,yellow,Null,Metal
+,Power Cabinet,Cabinet with power outlets,1193,725,800,yellow,Null,Metal
+,Power Cabinet,Cabinet with power outlets,1431,725,800,yellow,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,411,572,800,white,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,564,572,800,white,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,717,572,800,white,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,1023,572,800,white,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,411,725,800,white,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,564,725,800,white,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,717,725,800,white,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,870,725,800,white,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,1023,725,800,white,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,1193,725,800,white,Null,Metal
+,Cabinet with hinged doors,Cabinet with hinged door to accomondate larger object storage,1431,725,800,white,Null,Metal
+,Heavy-duty cabinets,Heavy duty large storage,1100,651,1950,grey,Null,Metal
+,Heavy-duty cabinets,Heavy duty large storage,1146,690,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,400,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,500,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,580,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,400,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,500,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,580,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,400,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,500,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,580,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,400,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,500,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,580,1000,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,400,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,500,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,580,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,400,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,500,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,580,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,400,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,500,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,580,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,400,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,500,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,580,1200,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1100,651,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1146,690,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,400,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,500,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,580,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,400,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,500,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,580,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,400,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,500,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,580,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,400,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,500,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,580,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1100,651,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1146,690,1320,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,400,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,500,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,500,580,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,400,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,500,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,750,580,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,400,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,500,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1000,580,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,400,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,500,1950,grey,Null,Metal
+,Hinged Door Cabinets,Taller cabinets for even more storage volume,1250,580,1950,grey,Null,Metal
+,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,750,350,20,blue,blue,Metal
+,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1000,350,20,blue,blue,Metal
+,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1500,350,20,blue,blue,Metal
+,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,750,350,20,black,black,Metal
+,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1000,350,20,black,black,Metal
+,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1500,350,20,black,black,Metal
+,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,750,350,20,white,white,Metal
+,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1000,350,20,white,white,Metal
+,Rear panel with keyholes,Panels that fit in superstructures and allow the fitting of accessories and hanging caninets,1500,350,20,white,white,Metal
+,Workbench Top,"Universal countertop for the workshop, Linoleum covering, grey marbled, 2 mm, 
+with ABS edges, light grey, 
+Impact-resistant and slightly dampening, 
+Limited scratch resistance, 
+Colour change due to darkness is a natural reaction (disappears in normal light conditions), 
+Linoleum is made from natural raw materials",Null,Null,Null,grey,Null,Universal
+,Workbench Top,"Beechwood top, Made of steamed beech beams, 
+glued waterproof and with bevelled edges, 
+Sanded, oiled and waxed surface, 
+Extremely resilient, splash-proof, dirt-repellent
+ and largely impervious to oil and grease",Null,Null,Null,grey,Null,Beechwood top
+,Workbench Top,"With hard, slightly grained surface texture, 2 mm, 
+With ABS edges, 2 mm, black, 
+High scratch resistance and impact resistance, 
+Resistant to chemicals, oils and greases",Null,Null,Null,grey,Null,ABS
+,Workbench Top,"Colour light grey, 
+Easy-to-clean textured surface with HPL coating, 0.8 mm, 
+Resistant to common household chemicals, 
+solvents, weak acids and alkalis, 
+High impact and scratch resistance,
+
+",Null,Null,Null,grey,Null,Resign Top
