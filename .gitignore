@@ -45,6 +45,7 @@ Thumbs.db
 # Project specific
 assets/
 components/
+data_usd/
 
 # Logs and databases
 *.log
