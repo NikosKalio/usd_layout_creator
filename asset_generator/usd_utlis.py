@@ -21,7 +21,7 @@ def create_usd_from_csv_row(row):
     
     # Create the geometry
     geometry = UsdGeom.Cube.Define(stage, f"/{name}/geometry")
-    
+
     # Set dimensions
     width, depth, height = int(row['Width']) / 1000, int(row['Depth']) / 1000, int(row['Height']) / 1000
     
@@ -67,7 +67,7 @@ def process_csv_file(file_path):
             create_usd_from_csv_row(row)
 
 # Usage
-process_csv_file('Lista Products - Enumerated.csv')
+process_csv_file('asset_generator\Lista Products - Enumerated.csv')
 
 
 
