@@ -1,0 +1,46 @@
+{
+    "components": [
+        {
+            "category": "Cabinet",
+            "requirements": [
+                "Drawers"
+            ],
+            "size": "Small"
+        },
+        {
+            "category": "Cabinet",
+            "requirements": [
+                "Drawers"
+            ],
+            "size": "Large"
+        },
+        {
+            "category": "Cabinet",
+            "requirements": [
+                "Provides power"
+            ],
+            "size": null
+        },
+        {
+            "category": "Workbench Top",
+            "requirements": [
+                "Resin"
+            ],
+            "size": null
+        },
+        {
+            "category": "Rear Panels",
+            "requirements": [
+                "Color: Black"
+            ],
+            "size": null
+        },
+        {
+            "category": "Rear Panels",
+            "requirements": [
+                "Color: White"
+            ],
+            "size": null
+        }
+    ]
+}

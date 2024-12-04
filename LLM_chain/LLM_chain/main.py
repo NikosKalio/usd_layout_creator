@@ -18,9 +18,9 @@ Dependencies:
 
 import json
 import logging
-from structure_user_input import structure_user_input
-from component_retriever import retrieve_components
-from assembly_chooser import choose_assemblies
+from structure_user_input import structure_user_input, convert_to_dict
+from component_retriever import retrieve_modules, retriever, index
+from retrieval_utils import width_cabinet,calculate_rear_panels_constrained, construct_file_path
 from dotenv import load_dotenv, find_dotenv
 import os
 
@@ -35,84 +35,143 @@ load_dotenv(dotenv_path)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 logging.info(f"OpenAI API Key: {OPENAI_API_KEY[:10]}...") # Only log the first 10 characters for security
 
+
 def main():
+    # Get user input
+    print("\nPlease describe your workbench configuration needs.")
+    print("Example: 'I need three cabinets, one small with shelves, two medium with drawers, a wooden workbench top, and black rear panels'")
+    user_input = """I need a modular workspace setup that includes three cabinets: 
+    One bin cabinet on the left, small-sized with a compact footprint, 
+    one rolling cabinet in the center, small-sized with smooth castors for mobility, designed with multiple drawers, 
+    and one drawer cabinet on the right, small-sized and optimized for tool storage. 
+    The workbench should have an ABS top for durability and easy maintenance. 
+    The rear of the setup requires three rows of rear panels, designed for modular functionality and support."""
+    #input("\nEnter your requirements: ")
+    
+    # Validate input is not empty
+    if not user_input.strip():
+        raise ValueError("User input cannot be empty")
     try:
         logging.info("Starting main function")
+
+
         
         # Step 1: Structure user input
         logging.info("Step 1: Structuring user input")
-        structured_input = structure_user_input()
+        structured_input = structure_user_input(user_input)
         if not structured_input:
             raise ValueError("No structured input received")
-        logging.info(f"Structured input: {json.dumps(structured_input, indent=2)}")
+        searches = convert_to_dict(structured_input)
+        logging.info(f"Structured input: {(json.dumps(searches, indent=2))}")
+
+
+
 
         # Step 2: Retrieve components for each part of the structured input
-        logging.info("Step 2: Retrieving components")
-        retrieved_components = {}
-        
-        for component_type, component_data in structured_input.items():
-            logging.info(f"Processing component type: {component_type}")
-            logging.info(f"Component data: {component_data}")
-            
-            if component_type == 'general_requirements':
-                logging.info("Skipping general requirements")
-                continue  # Skip general requirements, handle them separately
+        cabinets = [c for c in searches['components'] if c['category'] == "Cabinet"]
+        for cabinet in cabinets:
+            try:
+                retrieved_modules = retrieve_modules(str(cabinet))
+                if retrieved_modules:
+                    # Assuming you want the first result's default_prim
+                    cabinet['filepath'] = retrieved_modules[0]['default_prim']
+                else:
+                    cabinet['filepath'] = None
+            except Exception as e:
+                logging.error(f"Failed to retrieve module for cabinet: {cabinet}. Error: {e}")
+                cabinet['filepath'] = None
 
-            if isinstance(component_data, list):
-                # Handle list of components (e.g., cabinets)
-                logging.info(f"Handling list of components for {component_type}")
-                retrieved_components[component_type] = []
-                for item in component_data:
-                    query = f"I need a {item['type']} {component_type} with these requirements: {', '.join(item['requirements'])}."
-                    if structured_input.get('general_requirements'):
-                        query += f" Also keep in mind {', '.join(structured_input['general_requirements'])}."
-                    logging.info(f"Query: {query}")
-                    result = retrieve_components(query)
-                    logging.info(f"Retrieved result: {result}")
-                    retrieved_components[component_type].append(result)
-            elif isinstance(component_data, dict):
-                # Handle single component types (e.g., workbench_top, rear_panels)
-                logging.info(f"Handling single component for {component_type}")
-                if component_type == 'rear_panels' and not component_data.get('needed', False):
-                    logging.info("Skipping rear panels as they are not needed")
-                    continue  # Skip rear panels if not needed
-                query = f"I need a {component_data.get('type', '')} {component_type}"
-                if 'requirements' in component_data:
-                    query += f" with these requirements: {', '.join(component_data['requirements'])}."
-                if structured_input.get('general_requirements'):
-                    query += f" Also keep in mind {', '.join(structured_input['general_requirements'])}."
-                logging.info(f"Query: {query}")
-                result = retrieve_components(query)
-                logging.info(f"Retrieved result: {result}")
-                retrieved_components[component_type] = result
+        logging.info(f"Retrieved cabinets: {json.dumps(cabinets, indent=2)}")
 
-        logging.info(f"All retrieved components: {json.dumps(retrieved_components, indent=2)}")
+        workbenches = [c for c in searches['components'] if c['category'] == "Workbench Top"]
+        for workbench in workbenches:
+            try:
+                retrieved_modules = retrieve_modules(str(workbench))
+                if retrieved_modules:
+                    # Assuming you want the first result's default_prim
+                    workbench['filepath'] = retrieved_modules[0]['default_prim']
+                else:
+                    workbench['filepath'] = None
+            except Exception as e:
+                logging.error(f"Failed to retrieve module for workbench: {workbench}. Error: {e}")
+                workbench['filepath'] = None
 
-        # Step 3: Choose assemblies for each category
-        logging.info("Step 3: Choosing assemblies")
-        final_assemblies = {}
-        for category, components in retrieved_components.items():
-            logging.info(f"Processing category: {category}")
-            logging.info(f"Components: {components}")
-            if isinstance(components, list) and len(components) > 0 and isinstance(components[0], list):  # For categories with multiple items (e.g., cabinets)
-                final_assemblies[category] = []
-                for comp_list in components:
-                    assemblies = choose_assemblies(comp_list, k=3, query=category)
-                    final_assemblies[category].append(assemblies)
-            else:
-                assemblies = choose_assemblies(components, k=3, query=category)
-                final_assemblies[category] = assemblies
-            logging.info(f"Assemblies for {category}: {assemblies}")
 
-        # Step 4: Output the results
-        logging.info("Step 4: Outputting results")
-        if not final_assemblies:
-            logging.warning("No assemblies were generated.")
+                
+        # Step 3: Add filepaths to the json
+        assembly_data_model = searches  # This is a dictionary
+
+        # Overwrite the cabinets and workbench with the updated data
+        # Remove existing cabinets and workbench top from the components
+        assembly_data_model['components'] = [
+            component for component in assembly_data_model['components']
+            if component['category'] not in ["Cabinet", "Workbench Top"]
+        ]
+        # Add the updated cabinets and workbench to the components
+        assembly_data_model['components'].extend(cabinets)
+        assembly_data_model['components'].extend(workbenches)
+        logging.info("Assembly data model after adding cabinets and workbenches: %s", json.dumps(assembly_data_model, indent=2))
+
+
+
+        # Step 4: Calculate length and config of rear panels
+        # Calculate total width of cabinets using the width_cabinet function
+        cabinet_filepaths = [construct_file_path(cabinet['filepath']) for cabinet in cabinets if cabinet['filepath']]
+        cabinet_widths = width_cabinet(cabinet_filepaths)
+        total_cabinet_width = round(sum(cabinet_widths) * 1000)
+        logging.info(f"Total width of cabinets: {total_cabinet_width}")
+
+        # Calculate rear panel configuration
+        panels_config = calculate_rear_panels_constrained(total_cabinet_width)
+        logging.info(f"Rear panel configuration: {panels_config }")
+
+        # Step 5: Add rear panels to the assembly data model
+
+        # Check if there is a category "Rear Panels" in the assembly data model
+        rear_panels_components = [
+            component for component in assembly_data_model['components']
+            if component['category'] == "Rear Panels"
+        ]
+
+        if not rear_panels_components:
+            logging.info("No 'Rear Panels' category found in the assembly data model.")
         else:
-            logging.info(f"Final assemblies: {json.dumps(final_assemblies, indent=2)}")
+            logging.info("Adding rear panels to the assembly data model")
+            rear_panels = []
+
+            # L_panels['quantity_a'] and L_panels['quantity_b'] are calculated in step 4
+            quantity_a = panels_config['a']
+            quantity_b = panels_config['b']
+
+            # Nest rear panels as children under 'size' in the existing rear panel component
+            for panel in rear_panels_components:
+                panel['size'] = []
+                if quantity_a > 0:
+                    panel['size'].append({
+                        'filepath': 'rear_panel_with_keyholes_4',
+                        'quantity': quantity_a
+                    })
+                    logging.info(f"Adding {quantity_a} rear panels to the nested panels under 'size'")
+
+                if quantity_b > 0:
+                    panel['size'].append({
+                        'filepath': 'rear_panel_with_keyholes_5',
+                        'quantity': quantity_b
+                    })
+                    logging.info(f"Adding {quantity_b} rear panels to the nested panels under 'size'")
+
+            logging.info("Assembly data model after nesting rear panels under 'size': %s", json.dumps(assembly_data_model, indent=2))
+
+        # Step 6: write metadata
+        assembly_data_model['metadata'] = {
+            'W_tot_cabinets': total_cabinet_width,
+            'spacing': panels_config['spacing'],
+            'number_of_cabinets': len(cabinets)
+        }
+        logging.info(f"Metadata added to assembly data model: {json.dumps(assembly_data_model, indent=2)}")
 
     except Exception as e:
-        logging.exception(f"An error occurred: {str(e)}")
+        logging.error(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     main()
