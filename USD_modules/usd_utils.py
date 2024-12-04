@@ -3,7 +3,7 @@
 import os
 from pxr import Usd, UsdGeom
 
-def merge_usda_files(output_file, input_files, spacing=0.0):
+def merge_usda_files(output_file, top_file, input_files, spacing=0.0):
     """
     Merges multiple USDA files into a new USD scene, positioning them side by side.
 
@@ -23,7 +23,9 @@ def merge_usda_files(output_file, input_files, spacing=0.0):
         return
 
     current_x_translation = 0.0
-    prev_width = 0.0
+    prev_length = 0.0
+    max_height = 0.0
+    max_width = 0.0
 
     for index, file_path in enumerate(input_files):
         if not os.path.exists(file_path):
@@ -36,6 +38,7 @@ def merge_usda_files(output_file, input_files, spacing=0.0):
         # Add reference to the stage
         try:
             model_prim = stage.DefinePrim(prim_path)
+            UsdGeom.SetStageUpAxis(stage, "Z")
             model_prim.GetReferences().AddReference(file_path)
         except Exception as e:
             print(f"Error adding reference to {file_path}: {e}")
@@ -49,13 +52,17 @@ def merge_usda_files(output_file, input_files, spacing=0.0):
             if model_geometry_prim:
                 boundable = UsdGeom.Boundable(model_geometry_prim)
                 extent = boundable.GetExtentAttr().Get()
-                model_width = extent[1][0] - extent[0][0]  # Bounding box width
+                model_length = extent[1][0] - extent[0][0]  # Bounding box length
+                model_width = extent[1][1] - extent[0][1]
+                model_height =extent[1][2] - extent[0][2]
 
-                current_x_translation += prev_width + model_width + spacing
-                prev_width = model_width
+                max_height = max(max_height, model_height)
+                max_width = max(max_width, model_width)
+                current_x_translation += prev_length + model_length + spacing
+                prev_length = model_length
             else:
                 print(f"Warning: Could not find geometry for {file_path}. Using default spacing.")
-                current_x_translation += prev_width + spacing
+                current_x_translation += prev_length + spacing
 
         except Exception as e:
             print(f"Error computing bounds for {file_path}: {e}")
@@ -69,12 +76,48 @@ def merge_usda_files(output_file, input_files, spacing=0.0):
             print(f"Error applying transform to {prim_path}: {e}")
             continue
 
-    # Save the output stage
+    total_length = current_x_translation + model_length
     try:
+        if os.path.exists(top_file):
+            top_prim_path = "/TopModel"
+            top_prim = stage.DefinePrim(top_prim_path)
+            top_prim.GetReferences().AddReference(top_file)
+
+            # Scale the top model to match the total length
+            top_referenced_stage = Usd.Stage.Open(top_file)
+            top_geometry_prim = None
+
+            for prim in top_referenced_stage.Traverse():
+                if prim.IsA(UsdGeom.Boundable):
+                    top_geometry_prim = prim
+                    break
+
+            if top_geometry_prim:
+                top_boundable = UsdGeom.Boundable(top_geometry_prim)
+                top_extent = top_boundable.GetExtentAttr().Get()
+                top_length = top_extent[1][0] - top_extent[0][0]
+                top_width =top_extent[1][1] - top_extent[0][1]
+                top_height =top_extent[1][2] - top_extent[0][2]
+
+                length_scale = (total_length - spacing) / (top_length * 2)
+                width_scale = max_width / top_width
+
+                xform = UsdGeom.Xform(top_prim)
+
+                # Position the top model above the merged models
+                xform.AddTranslateOp().Set(value=((total_length + spacing) / 2, 0.0, max_height + top_height))
+                xform.AddScaleOp().Set(value=(length_scale, width_scale, 1))
+            else:
+                print(f"Warning: No geometry found in {top_file}. Skipping scaling.")
+        else:
+            print(f"Error: Top file {top_file} does not exist.")
+
         stage.GetRootLayer().Save()
-        print(f"Scene successfully created: {output_file}")
+        print(f"Scene successfully created with top model: {output_file}")
+
     except Exception as e:
-        print(f"Error saving output file {output_file}: {e}")
+        print(f"Error adding top file {top_file} to the scene: {e}")
+
 
 
 if __name__ == "__main__":
@@ -84,8 +127,10 @@ if __name__ == "__main__":
     "assets/components/cabinet_with_hinged_doors_2.usda",
     "assets/components/drawer_cabinet_4.usda",
     "assets/components/rolling_cabinet_2.usda",
-    "assets/components/cabinet_with_hinged_doors_9.usda",
+    "assets/components/cabinet_with_hinged_doors_1.usda",
     "assets/components/hinged_door_cabinet_with_bin_1.usda"
 ]
+    top_usda = "assets/components/workbench_top_1.usda" 
 output_usda_file = "merged_scene.usda"
-merge_usda_files(output_usda_file, input_usda_files, spacing=0.1)
+# merge_usda_files(output_usda_file, input_usda_files, spacing=0.1)
+merge_usda_files(output_usda_file, top_usda, input_usda_files, spacing=0.1)
