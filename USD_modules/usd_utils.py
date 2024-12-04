@@ -80,12 +80,12 @@ def merge_usda_files(output_file, input_files, spacing=0.0):
 if __name__ == "__main__":
     # Example usage
     input_usda_files = [
-    r"assets\components\cabinet_with_hinged_doors_1.usda",
-    r"assets\components\cabinet_with_hinged_doors_2.usda",
-    r"assets\components\drawer_cabinet_4.usda",
-    r"assets\components\rolling_cabinet_2.usda",
-    r"assets\components\cabinet_with_hinged_doors_9.usda",
-    r"assets\components\hinged_door_cabinet_with_bin_1.usda"
+    r"assets/components/cabinet_with_hinged_doors_1.usda",
+    r"assets/components/cabinet_with_hinged_doors_2.usda",
+    r"assets/components/drawer_cabinet_4.usda",
+    r"assets/components/rolling_cabinet_2.usda",
+    r"assets/components/cabinet_with_hinged_doors_9.usda",
+    r"assets/components/hinged_door_cabinet_with_bin_1.usda"
 ]
 output_usda_file = "merged_scene.usda"
 merge_usda_files(output_usda_file, input_usda_files, spacing=0.1)

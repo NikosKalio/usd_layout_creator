@@ -67,7 +67,7 @@ def process_csv_file(file_path):
             create_usd_from_csv_row(row)
 
 # Usage
-process_csv_file('asset_generator\Lista Products - Enumerated.csv')
+process_csv_file('Lista Products - Enumerated.csv')
 
 
 
