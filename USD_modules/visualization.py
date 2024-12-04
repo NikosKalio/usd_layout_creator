@@ -7,7 +7,7 @@ import os
 from string import Template
 import subprocess
 
-from typing import Any, List, Optional, Union
+from typing import List, Optional, Union
 from uuid import uuid4
 
 from IPython.display import DisplayHandle, display, HTML
@@ -488,9 +488,9 @@ def DisplayUSD(
     usd_filenames: Union[str, List[str]],
     width: Union[str, int] = "auto",
     height: int = 800,
-    disable_scrollwheel_zoom: bool = True,
+    disable_scrollwheel_zoom: bool = False,
     show_usd_code: bool = False,
-    show_usd_lights: bool = False,
+    show_usd_lights: bool = True,
 ) -> DisplayHandle:
     """
     Present an interactive 3D visualization in the Jupyter Notebook of the given USD files located in the `./content` folder.

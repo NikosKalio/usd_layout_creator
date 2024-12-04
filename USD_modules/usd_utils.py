@@ -142,8 +142,8 @@ def merge_usda_files(output_file, top_file, input_files, panel_file, quantity, l
                             xform = UsdGeom.Xform(panel_prim)
                             xform.AddTranslateOp().Set(value=(
                                 current_x  + panel_length,
-                                model_width + panel_height,
-                                max_height + panel_width + i * 2 * panel_width
+                                model_width - panel_height,
+                                max_height + panel_width + 2 * top_height + i * 2 * panel_width
                             ))
                             xform.AddRotateXOp().Set(value=(90))
 
