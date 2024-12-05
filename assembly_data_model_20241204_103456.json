@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "createdAt": "2024-12-04T10:26:46.794402",
+    "timestamp": "20241204_102646",
+    "W_tot_cabinets": 1998,
+    "spacing": 2,
+    "number_of_cabinets": 3
+  },
+  "components": [
+    {
+      "category": "Rear Panels",
+      "requirements": [
+        "modular functionality",
+        "support"
+      ],
+      "size": [
+        {
+          "filepath": "rear_panel_with_keyholes_5",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "bin",
+        "left",
+        "compact footprint"
+      ],
+      "size": "Small",
+      "filepath": "hinged_door_cabinet_with_bin_1"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "rolling",
+        "center",
+        "smooth castors",
+        "multiple drawers"
+      ],
+      "size": "Small",
+      "filepath": "rolling_cabinet_7"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "drawer",
+        "right",
+        "optimized for tool storage"
+      ],
+      "size": "Small",
+      "filepath": "drawer_cabinet_8"
+    },
+    {
+      "category": "Workbench Top",
+      "requirements": [
+        "ABS",
+        "durable",
+        "easy maintenance"
+      ],
+      "size": null,
+      "filepath": "workbench_top_3"
+    }
+  ]
+}

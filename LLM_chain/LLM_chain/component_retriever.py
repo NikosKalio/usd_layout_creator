@@ -24,6 +24,7 @@ import logging
 import sys
 import os
 
+import json
 # Load environment variables
 load_dotenv()
 
@@ -35,36 +36,66 @@ if not OPENAI_API_KEY:
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Rebuild storage context
-storage_context = StorageContext.from_defaults(persist_dir="LLM_chain/index_components")
 
+# Rebuild storage context
+storage_context = StorageContext.from_defaults(persist_dir="index_components")
 # Load index
 index = load_index_from_storage(storage_context)
 
 # Create a VectorIndexRetriever
 retriever = VectorIndexRetriever(
     index=index,
-    similarity_top_k=2 # Adjust this value based on how many results you want
+    similarity_top_k=1 # Adjust this value based on how many results you want
 )
 
-def retrieve_components(query):
-    nodes = retriever.retrieve(query)
-    return [{"content": node.node.text, "score": node.score} for node in nodes]
+def load_search_json(filename):
+    with open(filename, 'r') as f:
+        search_data = json.load(f)
+    return search_data
 
+def retrieve_modules(query):
+    nodes = retriever.retrieve(query)
+    results = []
+    for node in nodes:
+        content = node.node.text
+        # Extract defaultPrim name using string parsing
+        default_prim = None
+        for line in content.split('\n'):
+            if 'defaultPrim = ' in line:
+                # Extract text between quotes
+                default_prim = line.split('"')[1] if '"' in line else line.split('=')[1].strip()
+                break
+                
+        results.append({
+            "content": content,
+            "score": node.score,
+            "default_prim": default_prim
+        })
+    return results
+
+
+
+search_data = load_search_json('searches/search_20241202_121421.json')
+cabinets= [c for c in search_data['components'] if c['category'] == "Cabinet"]
+
+"""
 # Example usage
 if __name__ == "__main__":
     # Example query
     #query = "I need a rolling cabinet around 500mm wide"
-    query = "I need a plastic workbench top with high chemical and impact resistance"
+    print(json.dumps(cabinets[1], indent=2))
+    query = str(cabinets[2])
     
     # Retrieve components based on the query
-    retrieved_components = retrieve_components(query)
+    retrieved_modules = retrieve_modules(query)
     
     # Print the retrieved components
     print("Retrieved Components:")
-    for i, component in enumerate(retrieved_components, 1):
+    for i, component in enumerate(retrieved_modules, 1):
         print(f"\nComponent {i}:")
-        print(f"Content: {component['content'][:100]}...")  # Print first 100 characters
+        print(f"Default Prim: {component['default_prim']}")
+        print(f"Content: {component['content']}...")
         print(f"Score: {component['score']}")
 
     # You can further process or use these components as needed
+"""

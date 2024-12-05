@@ -1,0 +1,60 @@
+{
+  "components": [
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "Shelves"
+      ],
+      "size": "Small"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "Drawers"
+      ],
+      "size": "Medium"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "Drawers"
+      ],
+      "size": "Medium"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "Drawers"
+      ],
+      "size": "Small"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "Drawers"
+      ],
+      "size": "Large"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "Power Supply"
+      ],
+      "size": "Medium"
+    },
+    {
+      "category": "Workbench Top",
+      "requirements": [
+        "Wooden"
+      ],
+      "size": null
+    },
+    {
+      "category": "Rear Panels",
+      "requirements": [
+        "Black"
+      ],
+      "size": null
+    }
+  ]
+}

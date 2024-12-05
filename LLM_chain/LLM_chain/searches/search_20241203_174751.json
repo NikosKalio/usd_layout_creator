@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "createdAt": "2024-12-03T17:47:51.339185",
+    "timestamp": "20241203_174751"
+  },
+  "components": [
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "shelves"
+      ],
+      "size": "Small"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "drawers"
+      ],
+      "size": "Medium"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "drawers"
+      ],
+      "size": "Medium"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "drawers"
+      ],
+      "size": "Small"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "drawers"
+      ],
+      "size": "Large"
+    },
+    {
+      "category": "Cabinet",
+      "requirements": [
+        "provides power"
+      ],
+      "size": "Medium"
+    },
+    {
+      "category": "Workbench Top",
+      "requirements": [
+        "wooden"
+      ],
+      "size": null
+    },
+    {
+      "category": "Rear Panels",
+      "requirements": [
+        "color: black"
+      ],
+      "size": null
+    }
+  ]
+}

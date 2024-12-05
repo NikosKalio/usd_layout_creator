@@ -20,13 +20,16 @@ The script uses OpenAI's API and provides default values when specific details a
 #2. different types of workbenches according to functions
 #3. diffeerent sizes and collors of different panels.
 
-
 import os
 from dotenv import load_dotenv, find_dotenv
 import json
 from llama_index.core.program import LLMTextCompletionProgram
 from pydantic import BaseModel
 from typing import List, Optional
+import datetime
+from enum import Enum
+from openai import OpenAI
+from datetime import datetime
 
 # Load .env
 dotenv_path = find_dotenv()
@@ -35,128 +38,120 @@ load_dotenv(dotenv_path)
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Print the OpenAI API key (be careful with this in production!)
-print(f"OpenAI API Key: {OPENAI_API_KEY}")
+print(f"OpenAI API Key: {OPENAI_API_KEY[:10]}...")
 
 if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY not found in environment variables")
 
+def structure_user_input(user_input):
+    # Define a simple output structure
+    class Category(str, Enum):
+        cabinet = "Cabinet"
+        workbench_top = "Workbench Top"
+        rear_panels = "Rear Panels"
 
-file_path = 'llm_assets/user_input.txt'
+    class Size(str, Enum):
+        small = "Small"
+        medium = "Medium"
+        large = "Large"
 
-with open(file_path, 'r') as file:
-    user_input = file.read()
+    class WorkbenchComponent(BaseModel):
+        category: Category
+        requirements: List[str]
+        size: Optional[Size]
 
-print(user_input)
 
-# Define a simple output structure
-class Cabinet(BaseModel):
-    type: str
-    requirements: List[str] = []
+    class WorkbenchCombination(BaseModel):
+        components: List[WorkbenchComponent]
 
-class WorkbenchTop(BaseModel):
-    type: str
-    requirements: List[str] = []
+    # Define prompt template
+    prompt_template_str = """
+    You are tasked with interpreting expert user inputs to identify specific components for a modular workspace. Your goal is to extract the following information for each component:
 
-class RearPanels(BaseModel):
-    needed: bool
-    type: Optional[str] = None
-    color: Optional[str] = None
-    requirements: List[str] = []
+    1. **Category**: Determine the type of component mentioned (e.g., Cabinet, Workbench Top, Rear Panel).
+    2. **Size**: Identify the size specification if provided (e.g., Small, Medium, Large).
+    3. **Requirements**: List any additional specifications or requirements mentioned. These might include colors, materials, or functions that users require.
 
-class WorkbenchAssembly(BaseModel):
-    cabinets: List[Cabinet]
-    workbench_top: WorkbenchTop
-    rear_panels: RearPanels
-    general_requirements: List[str] = []
+    The output should include multiple searches:
+    - At least two cabinet searches (with sizes and requirements).
+    - One workbench top search.
+    - One rear panel search.
 
-    def to_dict(self):
-        return {
-            "cabinets": [cabinet.dict() for cabinet in self.cabinets],
-            "workbench_top": self.workbench_top.dict(),
-            "rear_panels": self.rear_panels.dict(),
-            "general_requirements": self.general_requirements
-        }
+    On average, a combination has 4-6 cabinets, 1 workbench top, and 2 rows of rear panels. They can be arbitrarily large, with N cabinets.
+    Infer reasonable values for any missing information. Use standard types and colors if not specified.
 
-# Define prompt template
-prompt_template_str = """
-You are a workbench assembly formatter. Given a description of a workbench setup, extract the following information:
+    Return the data as a list of components.
+    Infer reasonable values for any missing information. Use standard types and colors if not specified.
+    """
+    client = OpenAI(api_key=OPENAI_API_KEY)
 
-1. Cabinets: List of cabinet types (e.g., "drawer_cabinet", "cabinet_with_hinged_doors", "rolling_cabinet"). 
-   For each cabinet, include any specific requirements.
-   If types are not specified use at least a drawer cabinet and a hinged door cabinet. 
-   If number of cabinets is not specified use 2 cabinets. If size is not specified go for something 725mm depth and 564 wide.
+    completion = client.beta.chat.completions.parse(
+        model="gpt-4o-2024-08-06",
+        messages=[
+            {"role": "system", "content": prompt_template_str},
+            {"role": "user", "content": user_input}
+        ],
+        response_format=WorkbenchCombination,
+    )
 
-2. Workbench top: The type of workbench top (e.g., "standard", "heavy_duty", "custom").
-   Include any specific requirements for the workbench top.
-   If nothing is mentioned, use a universal workbench top.
+    #I need three cabinets, one small with shelves, two medium with drawers, a large wooden workbench
+    # I want two drawer cabinets, one small one large, a resin workbench top, and black rear panels. top, and white rear panels.
 
-3. Rear panels: Whether rear panels are needed (true/false), and if true, provide panel types and color. 
-   Include any specific requirements for the rear panels.
-   By default, set as false. If true but no type specified, use blue and 750mm width.
+    # Get the components from the parsed response
+    return completion.choices[0].message.parsed.components
 
-4. General requirements: List any requirements or features that don't fit specifically into the above categories.
+searches = structure_user_input("I need three cabinets, one small with shelves, two medium with drawers.n I want two drawer cabinets, one small one large, a wooden workbench top, and black rear panel, and a cabinet that provides power.")
 
-The description is: {user_input}
+# Function to format the output
+def format_component(component):
+    return f"Category: {component.category.value}, Requirements: {', '.join(component.requirements)}, Size: {component.size.value if component.size else 'N/A'}"
 
-Format the output as a JSON object with the following structure:
-{{
-  "cabinets": [
-    {{
-      "type": "cabinet_type_1",
-      "requirements": ["requirement1", "requirement2"]
-    }},
-    {{
-      "type": "cabinet_type_2",
-      "requirements": ["requirement1", "requirement2"]
-    }}
-  ],
-  "workbench_top": {{
-    "type": "top_type",
-    "requirements": ["requirement1", "requirement2"]
-  }},
-  "rear_panels": {{
-    "needed": true/false,
-    "type": "panel_type",
-    "color": "panel_color",
-    "requirements": ["requirement1", "requirement2"]
-  }},
-  "general_requirements": ["requirement1", "requirement2"]
-}}
+# Assuming 'searches' is a list of components
+def print_searches(searches):
+    print("\nThe searches to be done are:")
+    for component in searches:
+        print(format_component(component))
 
-Infer reasonable values for any missing information. Use standard types and colors where not specified.
-"""
+def convert_to_dict(searches):
+    """
+    Convert structured user input into a dictionary with metadata.
+    
+    Args:
+        searches: List of WorkbenchComponent objects
+        
+    Returns:
+        dict: Dictionary containing components and metadata
+    """
+    timestamp = datetime.now()
+    
+    return {
+        "metadata": {
+            "createdAt": timestamp.isoformat(),
+            "timestamp": timestamp.strftime("%Y%m%d_%H%M%S")
+        },
+        "components": [
+            {
+                "category": component.category.value,
+                "requirements": component.requirements,
+                "size": component.size.value if component.size else None
+            }
+            for component in searches
+        ]
+    }
 
-program = LLMTextCompletionProgram.from_defaults(
-    output_cls=WorkbenchAssembly,
-    prompt_template_str=prompt_template_str,
-    verbose=True,
-)
+# Create searches directory if it doesn't exist
+searches_dir = os.path.join(os.path.dirname(__file__), "searches")
+os.makedirs(searches_dir, exist_ok=True)
 
-output = program(user_input=user_input)
+# Use the new function to convert searches to dict
+searches_dict = convert_to_dict(searches)
 
-print(json.dumps(output.to_dict(), indent=2))
+# Generate filename using timestamp from the dict
+filename = f"search_{searches_dict['metadata']['timestamp']}.json"
+filepath = os.path.join(searches_dir, filename)
 
-# At the end of the file, replace the existing code with:
+# Save to JSON file
+with open(filepath, "w") as f:
+    json.dump(searches_dict, f, indent=2)
 
-output_dict = output.to_dict()
-print(json.dumps(output_dict, indent=2))
-
-# Generate a unique filename
-import datetime
-timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-filename = f"workbench_assembly_{timestamp}.json"
-directory = 'llm_assets/assembly_json'
-
-# Create the directory if it doesn't exist
-os.makedirs(directory, exist_ok=True)
-
-file_path = os.path.join(directory, filename)
-
-# Save the output as a JSON file
-with open(file_path, 'w') as json_file:
-    json.dump(output_dict, json_file, indent=2)
-
-print(f"Workbench assembly saved as JSON: {file_path}")
-
-def structure_user_input():
-    return output_dict
+print(f"\nSearches saved to: {filepath}")
