@@ -14,6 +14,7 @@ def create_usd_from_csv_row(row):
     # Create the main xform
     main_xform = UsdGeom.Xform.Define(stage, f"/{name}")
     stage.SetDefaultPrim(main_xform.GetPrim())
+    UsdGeom.SetStageUpAxis(stage, "Z")
 
     # Assign the 'component' kind
     Usd.ModelAPI(main_xform.GetPrim()).SetKind(Kind.Tokens.component)
@@ -67,7 +68,7 @@ def process_csv_file(file_path):
             create_usd_from_csv_row(row)
 
 # Usage
-process_csv_file('Lista Products - Enumerated.csv')
+process_csv_file('asset_generator/Lista Products - Enumerated.csv')
 
 
 
