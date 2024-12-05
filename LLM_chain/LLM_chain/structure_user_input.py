@@ -23,22 +23,18 @@ The script uses OpenAI's API and provides default values when specific details a
 import os
 from dotenv import load_dotenv, find_dotenv
 import json
-from llama_index.core.program import LLMTextCompletionProgram
 from pydantic import BaseModel
 from typing import List, Optional
-import datetime
 from enum import Enum
 from openai import OpenAI
 from datetime import datetime
 
 # Load .env
 dotenv_path = find_dotenv()
-print(f"Dotenv path: {dotenv_path}")
 load_dotenv(dotenv_path)
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-# Print the OpenAI API key (be careful with this in production!)
-print(f"OpenAI API Key: {OPENAI_API_KEY[:10]}...")
+
 
 if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY not found in environment variables")
@@ -153,5 +149,3 @@ filepath = os.path.join(searches_dir, filename)
 # Save to JSON file
 with open(filepath, "w") as f:
     json.dump(searches_dict, f, indent=2)
-
-print(f"\nSearches saved to: {filepath}")

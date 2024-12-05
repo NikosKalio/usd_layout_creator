@@ -142,7 +142,7 @@ def merge_usda_files(output_file, top_file, input_files, panel_file, quantity, l
                             xform = UsdGeom.Xform(panel_prim)
                             xform.AddTranslateOp().Set(value=(
                                 current_x  + panel_length,
-                                model_width - panel_height,
+                                max_width - panel_height,
                                 max_height + panel_width + 2 * top_height + i * 2 * panel_width
                             ))
                             xform.AddRotateXOp().Set(value=(90))
@@ -165,22 +165,21 @@ def merge_usda_files(output_file, top_file, input_files, panel_file, quantity, l
         print(f"Error adding top file {top_file} to the scene: {e}")
 
 
-
-if __name__ == "__main__":
-    # Example usage
-    input_usda_files = [
-    "assets/components/cabinet_with_hinged_doors_1.usda",
-    "assets/components/cabinet_with_hinged_doors_2.usda",
-    "assets/components/drawer_cabinet_4.usda",
-    "assets/components/rolling_cabinet_2.usda",
-    "assets/components/cabinet_with_hinged_doors_1.usda",
-]
+def extract_filepaths(json_data):
+    filepaths = []
     
-    rear_panel = "assets/components/rear_panel_with_keyholes_5.usda"
+    # Process components
+    for component in json_data.get("components", []):
+        # Handle case where filepath is directly in component
+        if "filepath" in component:
+            filepaths.append(component["filepath"])
+        
+        # Handle case where filepath is in size array
+        size = component.get("size", [])
+        if isinstance(size, list):
+            for item in size:
+                if isinstance(item, dict) and "filepath" in item:
+                    filepaths.append(item["filepath"])
+    
+    return filepaths
 
-    quantity = 3
-    layers = 3
-    top_usda = "assets/components/workbench_top_1.usda" 
-output_usda_file = "merged_scene.usda"
-# merge_usda_files(output_usda_file, input_usda_files, spacing=0.1)
-merge_usda_files(output_usda_file, top_usda, input_usda_files,rear_panel, quantity, layers=3, spacing=0.01)

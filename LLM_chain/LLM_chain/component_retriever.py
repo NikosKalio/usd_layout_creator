@@ -38,7 +38,7 @@ logger = logging.getLogger(__name__)
 
 
 # Rebuild storage context
-storage_context = StorageContext.from_defaults(persist_dir="index_components")
+storage_context = StorageContext.from_defaults(persist_dir="LLM_chain/LLM_chain/index_components")
 # Load index
 index = load_index_from_storage(storage_context)
 
@@ -75,8 +75,8 @@ def retrieve_modules(query):
 
 
 
-search_data = load_search_json('searches/search_20241202_121421.json')
-cabinets= [c for c in search_data['components'] if c['category'] == "Cabinet"]
+# search_data = load_search_json('LLM_chain/LLM_chain/searches/search_20241202_121421.json')
+# cabinets= [c for c in search_data['components'] if c['category'] == "Cabinet"]
 
 """
 # Example usage

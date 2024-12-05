@@ -14,11 +14,8 @@ The script:
 # create embedings of usda compnonents.
 import os
 from pathlib import Path
-from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, Document
+from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
 from dotenv import load_dotenv
-import logging
-import sys
-from llama_index.core import StorageContext, load_index_from_storage
 
 
 # Load environment variables
@@ -27,10 +24,6 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise ValueError("Failed to import OPENAI_API_KEY")
-
-# Set up logging
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 # Define the path to the components folder
 
