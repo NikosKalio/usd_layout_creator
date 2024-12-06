@@ -379,7 +379,7 @@ ${highlightjs_imports}
         <div class="col">
 
 <div id="${model_viewer_uuid}-wrapper" class="visualization-column">
-    <model-viewer id="${model_viewer_uuid}" src="${usd_file}" autoplay ar shadow-intensity="1" camera-controls touch-action="pan-y" ${zoom_attr}>
+    <model-viewer id="${model_viewer_uuid}" src="${usd_file}" autoplay ar shadow-intensity="1" camera-controls touch-action="pan-y" ${zoom_attr} orientation="0deg -90deg 0deg">
         <div class="loading-annotation">
             <div class="message">Loading your model...</div>
             <div class="asset-id">${usd_file_id}</div>

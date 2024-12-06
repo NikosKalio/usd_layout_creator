@@ -41,11 +41,13 @@ Thumbs.db
 *.usda
 *.usdc
 *.usdz
+*.glb
 
 # Project specific
 assets/
 components/
 data_usd/
+searches/
 
 # Logs and databases
 *.log

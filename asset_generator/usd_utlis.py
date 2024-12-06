@@ -14,7 +14,7 @@ def create_usd_from_csv_row(row):
     # Create the main xform
     main_xform = UsdGeom.Xform.Define(stage, f"/{name}")
     stage.SetDefaultPrim(main_xform.GetPrim())
-    UsdGeom.SetStageUpAxis(stage, "Z")
+    UsdGeom.SetStageUpAxis(stage, "Y")
 
     # Assign the 'component' kind
     Usd.ModelAPI(main_xform.GetPrim()).SetKind(Kind.Tokens.component)
